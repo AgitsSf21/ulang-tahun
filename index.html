@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Bouquet for You</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Great+Vibes&family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="balloon-container"></div>
+
+
+    <!-- SCREEN 1: PIN CODE -->
+    <section id="screen-pin" class="screen active">
+        <!-- Decorative watercolor blobs -->
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+        
+        <div class="pin-container">
+            <!-- Lock Icon (CSS/SVG) -->
+            <div class="lock-icon">
+                <svg viewBox="0 0 100 100" width="80" height="80">
+                    <path d="M50 20 C30 20 20 35 20 50 C20 70 50 90 50 90 C50 90 80 70 80 50 C80 35 70 20 50 20 Z" fill="#b3243c"/>
+                    <rect x="45" y="45" width="10" height="15" fill="#fff" rx="3"/>
+                    <circle cx="50" cy="45" r="7" fill="#fff"/>
+                </svg>
+            </div>
+            
+            <div class="to-from-text">
+                <p>From : <span>Secret</span></p>
+                <p>For : <span>Natasya</span></p>
+            </div>
+            
+            <p class="pin-hint">enter pin (1234)</p>
+            
+            <div class="pin-indicators" id="pin-indicators">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+            
+            <div class="numpad">
+                <button class="num-btn">1</button>
+                <button class="num-btn">2</button>
+                <button class="num-btn">3</button>
+                <button class="num-btn">4</button>
+                <button class="num-btn">5</button>
+                <button class="num-btn">6</button>
+                <button class="num-btn">7</button>
+                <button class="num-btn">8</button>
+                <button class="num-btn">9</button>
+                <button class="num-btn dummy">💖</button>
+                <button class="num-btn">0</button>
+                <button class="num-btn delete-btn">⌫</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- SCREEN 2: FLOWER BLOOMING -->
+    <section id="screen-flower" class="screen">
+        <div class="falling-petals">
+            <div class="fall-petal" style="--d: 0s; --x: 10%;"></div>
+            <div class="fall-petal" style="--d: 3s; --x: 30%;"></div>
+            <div class="fall-petal" style="--d: 1s; --x: 50%;"></div>
+            <div class="fall-petal" style="--d: 4s; --x: 70%;"></div>
+            <div class="fall-petal" style="--d: 2s; --x: 90%;"></div>
+            <div class="fall-petal" style="--d: 5s; --x: 20%;"></div>
+            <div class="fall-petal" style="--d: 2.5s; --x: 60%;"></div>
+            <div class="fall-petal" style="--d: 4.5s; --x: 80%;"></div>
+        </div>
+        <div class="flower-container">
+            <svg class="flower-svg" viewBox="0 0 300 300">
+                <defs>
+                    <g id="sakura-flower">
+                        <path class="sakura-petal" d="M0,0 C-15,-15 -10,-35 0,-30 C10,-35 15,-15 0,0" fill="#ffb7c5"/>
+                        <path class="sakura-petal" d="M0,0 C-15,-15 -10,-35 0,-30 C10,-35 15,-15 0,0" fill="#ffb7c5" transform="rotate(72)"/>
+                        <path class="sakura-petal" d="M0,0 C-15,-15 -10,-35 0,-30 C10,-35 15,-15 0,0" fill="#ffb7c5" transform="rotate(144)"/>
+                        <path class="sakura-petal" d="M0,0 C-15,-15 -10,-35 0,-30 C10,-35 15,-15 0,0" fill="#ffb7c5" transform="rotate(216)"/>
+                        <path class="sakura-petal" d="M0,0 C-15,-15 -10,-35 0,-30 C10,-35 15,-15 0,0" fill="#ffb7c5" transform="rotate(288)"/>
+                        <circle cx="0" cy="0" r="5" fill="#ff6b8b"/>
+                    </g>
+                </defs>
+                
+                <!-- Branches -->
+                <path class="branch" d="M 0 300 C 50 250 150 280 200 200 C 250 120 200 100 280 50" fill="none" stroke="#5c4033" stroke-width="6" stroke-linecap="round"/>
+                <path class="branch" d="M 110 260 C 90 200 130 150 90 100" fill="none" stroke="#5c4033" stroke-width="4" stroke-linecap="round"/>
+                <path class="branch" d="M 180 215 C 240 230 260 170 280 160" fill="none" stroke="#5c4033" stroke-width="3" stroke-linecap="round"/>
+                <path class="branch" d="M 220 125 C 180 100 150 80 140 40" fill="none" stroke="#5c4033" stroke-width="3" stroke-linecap="round"/>
+
+                <!-- Blooming Flowers -->
+                <g transform="translate(200, 200)"><use href="#sakura-flower" class="sakura" style="--delay: 1s; --s: 1.2;"/></g>
+                <g transform="translate(90, 100)"><use href="#sakura-flower" class="sakura" style="--delay: 1.5s; --s: 0.9;"/></g>
+                <g transform="translate(280, 50)"><use href="#sakura-flower" class="sakura" style="--delay: 2.5s; --s: 1.1;"/></g>
+                <g transform="translate(280, 160)"><use href="#sakura-flower" class="sakura" style="--delay: 2s; --s: 0.8;"/></g>
+                <g transform="translate(140, 40)"><use href="#sakura-flower" class="sakura" style="--delay: 3s; --s: 0.9;"/></g>
+                <g transform="translate(130, 180)"><use href="#sakura-flower" class="sakura" style="--delay: 1.2s; --s: 0.7;"/></g>
+                <g transform="translate(230, 100)"><use href="#sakura-flower" class="sakura" style="--delay: 2.2s; --s: 0.6;"/></g>
+            </svg>
+            <h2 class="flower-text">Bunga bermekaran untukmu...</h2>
+        </div>
+    </section>
+
+    <!-- SCREEN 3 & 4: ENVELOPE AND MESSAGE -->
+    <section id="screen-envelope" class="screen">
+        <div class="envelope-wrapper">
+            <div class="envelope" id="envelope">
+                <div class="flap"></div>
+                <div class="pocket"></div>
+                <div class="wax-seal"></div>
+                <!-- The Letter -->
+                <div class="letter">
+                    <div class="letter-content">
+                        <h1>Happy Birthday, Natasya!</h1>
+                        <p>
+                            Semoga di usiamu yang baru ini, setiap harimu selalu dipenuhi dengan kebahagiaan, cinta, dan tawa.
+                        </p>
+                        <p>
+                            Teruslah mekar dan bersinar seperti bunga yang indah. Kejar semua mimpimu!
+                        </p>
+                        <p class="signature">With love.</p>
+                        <button id="make-wish-btn">Make a wish ✨</button>
+                    </div>
+                </div>
+                
+            </div>
+            <p class="envelope-hint">Click to open</p>
+            
+            <!-- POLAROID CONTAINER -->
+            <div class="polaroid-container" id="polaroid-container">
+                <div class="polaroid p-left" onclick="openLightbox(this)">
+                    <div class="polaroid-img" style="background-image: url('foto1.jpg');"></div>
+                    <p class="polaroid-caption">You ❤️</p>
+                </div>
+                <div class="polaroid p-right" onclick="openLightbox(this)">
+                    <div class="polaroid-img" style="background-image: url('foto2.jpg');"></div>
+                    <p class="polaroid-caption">Memories ✨</p>
+                </div>
+            </div>
+        </div>
+        <!-- The Walking Cat (Loading Screen Style) -->
+        <div class="walking-cat-wrapper">
+            <div class="speech-bubble"><span class="cat-text"></span></div>
+            <div class="walking-cat-inner">
+                <svg viewBox="0 0 120 100" width="100" height="85" xmlns="http://www.w3.org/2000/svg">
+                  <style>
+                    .leg-1 { animation: swing 0.6s infinite alternate ease-in-out; transform-origin: 0px 0px; }
+                    .leg-2 { animation: swing 0.6s infinite alternate-reverse ease-in-out; transform-origin: 0px 0px; }
+                    .tail { animation: swoosh 1.5s infinite alternate ease-in-out; transform-origin: 25px 60px; }
+                    .head-bob { animation: bob 0.3s infinite alternate; }
+                    @keyframes swing { from { transform: rotate(-25deg); } to { transform: rotate(25deg); } }
+                    @keyframes swoosh { from { transform: rotate(-10deg); } to { transform: rotate(20deg); } }
+                    @keyframes bob { from { transform: translateY(0); } to { transform: translateY(3px); } }
+                  </style>
+                  
+                  <g class="head-bob" fill="#a8a8a8" stroke="#4a4a4a" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+                    
+                    <!-- Tail -->
+                    <g class="tail">
+                      <path d="M 25 60 Q 5 60 10 30 Q 15 20 20 35" fill="#a8a8a8" />
+                    </g>
+
+                    <!-- Back Legs -->
+                    <g transform="translate(40, 70)">
+                      <rect class="leg-2" x="-5" y="0" width="10" height="15" rx="5" fill="#8a8a8a" />
+                    </g>
+                    <g transform="translate(75, 70)">
+                      <rect class="leg-2" x="-5" y="0" width="10" height="15" rx="5" fill="#8a8a8a" />
+                    </g>
+
+                    <!-- Main Body -->
+                    <rect x="25" y="45" width="65" height="35" rx="17" />
+                    
+                    <!-- Head -->
+                    <circle cx="85" cy="55" r="22" />
+                    
+                    <!-- Ears -->
+                    <path d="M 70 40 L 75 20 L 90 35 Z" />
+                    <path d="M 85 32 L 95 18 L 102 40 Z" />
+
+                    <!-- Stripes on back -->
+                    <path d="M 35 45 L 35 55 M 45 45 L 45 55 M 55 45 L 55 55" stroke="#4a4a4a" stroke-width="4" stroke-linecap="round"/>
+                    
+                    <!-- Stripes on top of head -->
+                    <path d="M 85 40 L 85 45 M 78 42 L 80 47 M 92 42 L 90 47" stroke="#4a4a4a" stroke-width="3" stroke-linecap="round"/>
+
+                    <!-- Front Legs -->
+                    <g transform="translate(30, 70)">
+                      <rect class="leg-1" x="-5" y="0" width="10" height="15" rx="5" />
+                    </g>
+                    <g transform="translate(85, 70)">
+                      <rect class="leg-1" x="-5" y="0" width="10" height="15" rx="5" />
+                    </g>
+                    
+                    <!-- Face (No stroke) -->
+                    <g stroke="none">
+                        <!-- Eyes (Dark) -->
+                        <circle cx="90" cy="52" r="2.5" fill="#4a4a4a" />
+                        <circle cx="102" cy="52" r="2.5" fill="#4a4a4a" />
+                        <!-- Blush -->
+                        <circle cx="84" cy="56" r="3" fill="#ffcdd2" opacity="0.8"/>
+                        <circle cx="108" cy="56" r="3" fill="#ffcdd2" opacity="0.8"/>
+                    </g>
+                    <!-- Cute Mouth ^ -->
+                    <path d="M 94 57 L 96 55 L 98 57" fill="none" stroke="#4a4a4a" stroke-width="2.5" stroke-linecap="round"/>
+                  </g>
+                </svg>
+            </div>
+        </div>
+        
+        <!-- SIDE SAKURA -->
+        <div class="side-sakura left">
+            <svg viewBox="0 0 150 300" width="100%" height="100%">
+                <path class="branch" d="M -10 150 Q 80 120 130 50" fill="none" stroke="#5c4033" stroke-width="5" stroke-linecap="round"/>
+                <path class="branch" d="M 40 135 Q 100 180 140 250" fill="none" stroke="#5c4033" stroke-width="4" stroke-linecap="round"/>
+                
+                <g transform="translate(130, 50) scale(0.8)"><g class="sakura" style="--delay: 1s;">
+                    <path class="sakura-petal" d="M0,0 C-15,-15 -10,-35 0,-30 C10,-35 15,-15 0,0" fill="#ffb7c5"/>
+                    <path class="sakura-petal" d="M0,0 C-15,-15 -10,-35 0,-30 C10,-35 15,-15 0,0" fill="#ffb7c5" transform="rotate(72)"/>
+                    <path class="sakura-petal" d="M0,0 C-15,-15 -10,-35 0,-30 C10,-35 15,-15 0,0" fill="#ffb7c5" transform="rotate(144)"/>
+                    <path class="sakura-petal" d="M0,0 C-15,-15 -10,-35 0,-30 C10,-35 15,-15 0,0" fill="#ffb7c5" transform="rotate(216)"/>
+                    <path class="sakura-petal" d="M0,0 C-15,-15 -10,-35 0,-30 C10,-35 15,-15 0,0" fill="#ffb7c5" transform="rotate(288)"/>
+                    <circle cx="0" cy="0" r="5" fill="#ff6b8b"/>
+                </g></g>
+                <g transform="translate(60, 130) scale(1.2)"><g class="sakura" style="--delay: 0.5s;">
+                    <path class="sakura-petal" d="M0,0 C-15,-15 -10,-35 0,-30 C10,-35 15,-15 0,0" fill="#ffb7c5"/>
+                    <path class="sakura-petal" d="M0,0 C-15,-15 -10,-35 0,-30 C10,-35 15,-15 0,0" fill="#ffb7c5" transform="rotate(72)"/>
+                    <path class="sakura-petal" d="M0,0 C-15,-15 -10,-35 0,-30 C10,-35 15,-15 0,0" fill="#ffb7c5" transform="rotate(144)"/>
+                    <path class="sakura-petal" d="M0,0 C-15,-15 -10,-35 0,-30 C10,-35 15,-15 0,0" fill="#ffb7c5" transform="rotate(216)"/>
+                    <path class="sakura-petal" d="M0,0 C-15,-15 -10,-35 0,-30 C10,-35 15,-15 0,0" fill="#ffb7c5" transform="rotate(288)"/>
+                    <circle cx="0" cy="0" r="5" fill="#ff6b8b"/>
+                </g></g>
+                <g transform="translate(140, 250) scale(0.9)"><g class="sakura" style="--delay: 1.5s;">
+                    <path class="sakura-petal" d="M0,0 C-15,-15 -10,-35 0,-30 C10,-35 15,-15 0,0" fill="#ffb7c5"/>
+                    <path class="sakura-petal" d="M0,0 C-15,-15 -10,-35 0,-30 C10,-35 15,-15 0,0" fill="#ffb7c5" transform="rotate(72)"/>
+                    <path class="sakura-petal" d="M0,0 C-15,-15 -10,-35 0,-30 C10,-35 15,-15 0,0" fill="#ffb7c5" transform="rotate(144)"/>
+                    <path class="sakura-petal" d="M0,0 C-15,-15 -10,-35 0,-30 C10,-35 15,-15 0,0" fill="#ffb7c5" transform="rotate(216)"/>
+                    <path class="sakura-petal" d="M0,0 C-15,-15 -10,-35 0,-30 C10,-35 15,-15 0,0" fill="#ffb7c5" transform="rotate(288)"/>
+                    <circle cx="0" cy="0" r="5" fill="#ff6b8b"/>
+                </g></g>
+                <g transform="translate(90, 180) scale(0.7)"><g class="sakura" style="--delay: 1.2s;">
+                    <path class="sakura-petal" d="M0,0 C-15,-15 -10,-35 0,-30 C10,-35 15,-15 0,0" fill="#ffb7c5"/>
+                    <path class="sakura-petal" d="M0,0 C-15,-15 -10,-35 0,-30 C10,-35 15,-15 0,0" fill="#ffb7c5" transform="rotate(72)"/>
+                    <path class="sakura-petal" d="M0,0 C-15,-15 -10,-35 0,-30 C10,-35 15,-15 0,0" fill="#ffb7c5" transform="rotate(144)"/>
+                    <path class="sakura-petal" d="M0,0 C-15,-15 -10,-35 0,-30 C10,-35 15,-15 0,0" fill="#ffb7c5" transform="rotate(216)"/>
+                    <path class="sakura-petal" d="M0,0 C-15,-15 -10,-35 0,-30 C10,-35 15,-15 0,0" fill="#ffb7c5" transform="rotate(288)"/>
+                    <circle cx="0" cy="0" r="5" fill="#ff6b8b"/>
+                </g></g>
+            </svg>
+        </div>
+        <div class="side-sakura right">
+            <svg viewBox="0 0 150 300" width="100%" height="100%">
+                <path class="branch" d="M 160 150 Q 70 120 20 50" fill="none" stroke="#5c4033" stroke-width="5" stroke-linecap="round"/>
+                <path class="branch" d="M 110 135 Q 50 180 10 250" fill="none" stroke="#5c4033" stroke-width="4" stroke-linecap="round"/>
+                
+                <g transform="translate(20, 50) scale(0.8)"><g class="sakura" style="--delay: 1s;">
+                    <path class="sakura-petal" d="M0,0 C-15,-15 -10,-35 0,-30 C10,-35 15,-15 0,0" fill="#ffb7c5"/>
+                    <path class="sakura-petal" d="M0,0 C-15,-15 -10,-35 0,-30 C10,-35 15,-15 0,0" fill="#ffb7c5" transform="rotate(72)"/>
+                    <path class="sakura-petal" d="M0,0 C-15,-15 -10,-35 0,-30 C10,-35 15,-15 0,0" fill="#ffb7c5" transform="rotate(144)"/>
+                    <path class="sakura-petal" d="M0,0 C-15,-15 -10,-35 0,-30 C10,-35 15,-15 0,0" fill="#ffb7c5" transform="rotate(216)"/>
+                    <path class="sakura-petal" d="M0,0 C-15,-15 -10,-35 0,-30 C10,-35 15,-15 0,0" fill="#ffb7c5" transform="rotate(288)"/>
+                    <circle cx="0" cy="0" r="5" fill="#ff6b8b"/>
+                </g></g>
+                <g transform="translate(90, 130) scale(1.2)"><g class="sakura" style="--delay: 0.5s;">
+                    <path class="sakura-petal" d="M0,0 C-15,-15 -10,-35 0,-30 C10,-35 15,-15 0,0" fill="#ffb7c5"/>
+                    <path class="sakura-petal" d="M0,0 C-15,-15 -10,-35 0,-30 C10,-35 15,-15 0,0" fill="#ffb7c5" transform="rotate(72)"/>
+                    <path class="sakura-petal" d="M0,0 C-15,-15 -10,-35 0,-30 C10,-35 15,-15 0,0" fill="#ffb7c5" transform="rotate(144)"/>
+                    <path class="sakura-petal" d="M0,0 C-15,-15 -10,-35 0,-30 C10,-35 15,-15 0,0" fill="#ffb7c5" transform="rotate(216)"/>
+                    <path class="sakura-petal" d="M0,0 C-15,-15 -10,-35 0,-30 C10,-35 15,-15 0,0" fill="#ffb7c5" transform="rotate(288)"/>
+                    <circle cx="0" cy="0" r="5" fill="#ff6b8b"/>
+                </g></g>
+                <g transform="translate(10, 250) scale(0.9)"><g class="sakura" style="--delay: 1.5s;">
+                    <path class="sakura-petal" d="M0,0 C-15,-15 -10,-35 0,-30 C10,-35 15,-15 0,0" fill="#ffb7c5"/>
+                    <path class="sakura-petal" d="M0,0 C-15,-15 -10,-35 0,-30 C10,-35 15,-15 0,0" fill="#ffb7c5" transform="rotate(72)"/>
+                    <path class="sakura-petal" d="M0,0 C-15,-15 -10,-35 0,-30 C10,-35 15,-15 0,0" fill="#ffb7c5" transform="rotate(144)"/>
+                    <path class="sakura-petal" d="M0,0 C-15,-15 -10,-35 0,-30 C10,-35 15,-15 0,0" fill="#ffb7c5" transform="rotate(216)"/>
+                    <path class="sakura-petal" d="M0,0 C-15,-15 -10,-35 0,-30 C10,-35 15,-15 0,0" fill="#ffb7c5" transform="rotate(288)"/>
+                    <circle cx="0" cy="0" r="5" fill="#ff6b8b"/>
+                </g></g>
+                <g transform="translate(60, 180) scale(0.7)"><g class="sakura" style="--delay: 1.2s;">
+                    <path class="sakura-petal" d="M0,0 C-15,-15 -10,-35 0,-30 C10,-35 15,-15 0,0" fill="#ffb7c5"/>
+                    <path class="sakura-petal" d="M0,0 C-15,-15 -10,-35 0,-30 C10,-35 15,-15 0,0" fill="#ffb7c5" transform="rotate(72)"/>
+                    <path class="sakura-petal" d="M0,0 C-15,-15 -10,-35 0,-30 C10,-35 15,-15 0,0" fill="#ffb7c5" transform="rotate(144)"/>
+                    <path class="sakura-petal" d="M0,0 C-15,-15 -10,-35 0,-30 C10,-35 15,-15 0,0" fill="#ffb7c5" transform="rotate(216)"/>
+                    <path class="sakura-petal" d="M0,0 C-15,-15 -10,-35 0,-30 C10,-35 15,-15 0,0" fill="#ffb7c5" transform="rotate(288)"/>
+                    <circle cx="0" cy="0" r="5" fill="#ff6b8b"/>
+                </g></g>
+            </svg>
+        </div>
+    </section>
+
+    <!-- SCREEN 5: VIRTUAL CAKE -->
+    <section id="screen-cake" class="screen">
+        <div class="banner" id="cake-banner">Happy Birthday!</div>
+        <div class="cake-container">
+            <div class="cake">
+                <div class="frosting"></div>
+                <div class="candle">
+                    <div class="flame" id="flame"></div>
+                </div>
+            </div>
+            <div class="wish-text" id="wish-text">Tap the flame to blow out the candle! 💨</div>
+        </div>
+    </section>
+
+    <!-- LIGHTBOX OVERLAY -->
+    <div id="lightbox" class="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <img id="lightbox-img" src="" alt="Full Photo">
+    </div>
+    
+    <!-- Background Music -->
+    <audio id="bgm" src="music.mp3" loop></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
